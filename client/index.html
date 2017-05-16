@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+  <title>Code_Screen</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <article class="code_screen_instruction col-md-10 col-xs-offset-1">
+        <h1 class="text-center">Code Screen Project</h1>
+        <ol class="code_screen_requirement">
+          <li>
+            The project should provide a web service.
+            <ul>
+              <li>The web service accepts a number, n, as input and returns the first n Fibonacci numbers, starting from 0. (I.e. given n = 5, appropriate output would represent the sequence "0 1 1 2 3".)</li>
+              <li>Given a negative number or other invalid input, it will respond with an appropriate error.</li>
+            </ul>
+          </li>
+          <li>
+            Include whatever instructions are necessary to build and deploy/run the project, where "deploy/run" means the web service is accepting requests and responding to them as appropriate.
+          </li>
+          <li>
+            Include some tests
+          </li>
+        </ol>
+      </article>
+    </div>
+    <hr />
+    <div class="row">
+      <article class="code_screen_project col-md-8 col-xs-offset-2">
+        <div class="alert alert-dismissible" hidden="true">
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="text-center">Find Fibonacci Sequence Until Input Number</h3>
+          </div>
+          <div class="panel-body">
+            <form id="proeject_form">
+              <div class="form-group">
+                <label for="user_input">Please enter the number below to findout fibonacci sequence!</label>
+                <input type="number" class="form-control" id="user_input" name="user_input"/>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./service.js"></script>
+  </div>
+
+</body>
+</html>
