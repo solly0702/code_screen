@@ -4,13 +4,19 @@
   "description": "",
   "main": "./server/server.js",
   "dependencies": {
+    "big-integer": "^1.6.22",
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "jquery": "^3.2.1",
+    "request": "^2.81.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jasmine-node": "^1.14.5",
+    "jsdom": "^10.1.0"
+  },
   "scripts": {
-    "start": "nodemon ./server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./server/server.js",
+    "test": "jasmine-node --verbose --color spec/*"
   },
   "keywords": [],
   "author": "Sol Lee <solly0702@gmail.com> (http://www.solscoding.com/)",
