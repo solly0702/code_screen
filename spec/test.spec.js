@@ -33,30 +33,33 @@ describe("Async", function() {
     describe("POST / with", function() {
         api_url = base_url + "api/fib/"
         it("status code 400", function(done) {
-            request.post(api_url, {json: true, user_input: ""}, function(err, res, body) {
+            request({url: api_url, method: "POST", json: {user_input: ""}}, function(err, res, body) {
                 expect(res.statusCode).toBe(400)
                 done()
             })
         })
 
         it("warining message of server issue", function(done) {
-            request.post(api_url, {json: true, user_input: "abc"}, function(err, res, body) {
+            request({url: api_url, method: "POST", json: {user_input: "a"}}, function(err, res, body) {
                 expect(body.error).toContain("Invalid input was provided")
-                server.closeServer()
+                done()
+            })
+        })
+        
+        it("status code 200", function(done) {
+            request({url: api_url, method: "POST", json: {user_input: "5"}}, function(err, res, body) {
+                expect(res.statusCode).toBe(200)
                 done()
             })
         })
 
-        // TODO: how to send request.post json
-        
-        // it("status code 200", function(done) {
-        //     request.post(api_url, {json: true, user_input: 5}, function(err, res, body) {
-        //         expect(res.statusCode).toBe(200)
-        //         // console.log(body);
-        //
-        //         done()
-        //     })
-        // })
+        it("fibonacci up to but not including fib(5)", function(done) {
+            request({url: api_url, method: "POST", json: {user_input: "5"}}, function(err, res, body) {
+                expect(body).toEqual({ payload: [ '0', '1', '1', '2', '3' ] })
+                server.closeServer()
+                done()
+            })
+        })
     })
 
 })
